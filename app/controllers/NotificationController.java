@@ -9,7 +9,7 @@ import play.mvc.Result;
 import requestHandler.notification.SendRequestHandler;
 
 public class NotificationController extends Controller {
-    public Result index() {
+    public Result send() {
         JsonNode requestBody = request().body().asJson();
         SendRequest sendRequest = Json.fromJson(requestBody, SendRequest.class);
         SendRequestHandler sendRequestHandler = new SendRequestHandler(sendRequest);
