@@ -1,25 +1,26 @@
-package dto.Notification;
+package dto.PublishMessage;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.Data;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
-@Builder
+@Getter
+@Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SendResponse {
+public class MessageMetaData {
 
-    @JsonProperty("status")
-    private String status;
+    @NotNull
+    @JsonProperty("tenant")
+    String tenant;
 
-    @JsonProperty("message")
-    private String message;
+    @NotNull
+    @JsonProperty("topic")
+    String topic;
 
-    @JsonProperty("error_code")
-    private String errorCode;
+    @JsonProperty("timestamp")
+    long timestamp;
 }
