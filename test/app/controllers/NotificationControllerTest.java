@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.UUID;
 
+import static org.junit.Assert.assertEquals;
 
 
 public class NotificationControllerTest {
@@ -19,7 +20,6 @@ public class NotificationControllerTest {
         HashMap<String, Object> notification_data = new HashMap<>();
         notification_data.put("name", "Sanjeev");
         sendRequest.setNotificationData(notification_data);
-
-
+        assertEquals(sendRequest.getTopic(), "otp");
     }
 }
