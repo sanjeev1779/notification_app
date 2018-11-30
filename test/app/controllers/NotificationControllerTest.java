@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class NotificationControllerTest {
 
-//    SendRequest sendRequestMock = mock(SendRequest.class);
+    //    SendRequest sendRequestMock = mock(SendRequest.class);
     @Test
     public void send() {
         SendRequest sendRequest = new SendRequest();

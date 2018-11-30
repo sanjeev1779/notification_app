@@ -17,17 +17,16 @@ public class SendRequestHandler {
 
     public SendRequestHandler(SendRequest sendRequest) {
         this.sendRequest = sendRequest;
-        this.sendResponse = new SendResponse();
     }
 
     public SendResponse processRequest() {
         HashMap<String, String> publishStatus = publishMessage();
         if (publishStatus != null) {
-            sendResponse.setStatus(AppConstants.RESPONSE_STATUS.SUCCESS.toString());
-            sendResponse.setMessage("Sent Successfully");
+            sendResponse = SendResponse.builder().status(AppConstants.RESPONSE_STATUS.SUCCESS.toString())
+                    .message("Sent Successfully").build();
         } else {
-            sendResponse.setStatus(AppConstants.RESPONSE_STATUS.FAILURE.toString());
-            sendResponse.setMessage(AppConstants.DEFAULT_ERROR_MESSAGE);
+            sendResponse = SendResponse.builder().status(AppConstants.RESPONSE_STATUS.FAILURE.toString())
+                    .message(AppConstants.DEFAULT_ERROR_MESSAGE).build();
         }
         return sendResponse;
     }
