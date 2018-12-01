@@ -15,5 +15,5 @@ System Requirement:
 Commands:
 <ul>
   <li>To run app: activator run </li>
-  <li> To run app:  activator test </li>
+  <li> To run unit test:  activator test </li>
 </ul>
